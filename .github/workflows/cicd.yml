@@ -1,0 +1,39 @@
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Upload Python Package #specifies name of work flow
+
+# when it should execute
+on: #It should execute only when pushing the changes to branches. here we have main branch.We can also have development branch or master branch
+  push:
+    branches:
+    - main
+    # - dev
+
+#What after pushing the changes to main branch
+#It should do the job, which is deployment.
+jobs:
+  deploy:
+    runs-on: ubuntu-latest #It should run on latest ubuntu versions. It as well as run on the github servers also. In the ubuntu based remote sever we are creating 3.7 based python environment.
+    steps: #Steps to be performed
+      - uses: actions/checkout@v2 #creating the environment first.
+      - name: Set up Python #Name of the paricular setup
+        uses: actions/setup-python@v2 # All python setup will be available in the actions.
+        with:
+          python-version: '3.7' #version of python to use
+      - name: Install dependencies #dependencies required
+        run: | #build package is used to create the package #default pip should be upgraded to the latest version.
+          python -m pip install --upgrade pip 
+          pip install build  
+      - name: Build package
+        run: python -m build #The -m option allows you to execute a module or package as a script.
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }} #It says I will be uploading packages by using the token values which we have created in the PYPI_API_TOKEN 
+          #Token will act as a password to push the changes to the pypi library
+          # We are not giving the password directly here..we are using the secrets for this purpose...Therefore it offers more security
