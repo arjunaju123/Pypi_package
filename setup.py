@@ -3,12 +3,12 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-PROJECT_NAME = "Pypi_package"
+PROJECT_NAME = "Pypi_package_creation"
 USERNAME = "arjun_aju123"
 
 setuptools.setup(
     name=f"{PROJECT_NAME}-{USERNAME}",
-    version="0.0.1",
+    version="0.0.2",
     author=USERNAME,
     author_email="54721arjun@gmail.com",
     description="It's an implementation of perceptron",
