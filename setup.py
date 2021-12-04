@@ -4,11 +4,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 PROJECT_NAME = "Pypi_package_creation"
-USERNAME = "arjun_aju123"
+USERNAME = "arjunaju123"
 
 setuptools.setup(
     name=f"{PROJECT_NAME}-{USERNAME}",
-    version="0.0.2",
+    version="0.0.4",
     author=USERNAME,
     author_email="54721arjun@gmail.com",
     description="It's an implementation of perceptron",
@@ -23,7 +23,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
+    package_dir={"": "src"}, #package is in the src folder. Here it is perceptron_pypi_package
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.7",
     install_requires=["numpy","tqdm"]
