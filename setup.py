@@ -8,7 +8,7 @@ USERNAME = "arjun_aju123"
 
 setuptools.setup(
     name=f"{PROJECT_NAME}-{USERNAME}",
-    version="0.0.1",
+    version="0.0.2",
     author=USERNAME,
     author_email="54721arjun@gmail.com",
     description="It's an implementation of perceptron",
