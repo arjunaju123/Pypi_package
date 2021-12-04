@@ -34,6 +34,6 @@ jobs:
         uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
         with:
           user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }} #It says I will be uploading packages by using the token values which we have created in the PYPI_API_TOKEN 
+          password: ${{ secrets.PYPI_API_TOKENS }} #It says I will be uploading packages by using the token values which we have created in the PYPI_API_TOKEN 
           #Token will act as a password to push the changes to the pypi library
           # We are not giving the password directly here..we are using the secrets for this purpose...Therefore it offers more security

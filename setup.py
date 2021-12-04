@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-PROJECT_NAME = "Pypi_package_creation"
+PROJECT_NAME = "pypi_package_creation"
 USERNAME = "arjunaju123"
 
 setuptools.setup(
